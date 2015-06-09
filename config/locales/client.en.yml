@@ -47,6 +47,7 @@ en:
     heading: Outcome
     set_outcome_hint: Use this space to let everyone know the outcome of the proposal.
     set_outcome_btn: Set proposal outcome
+    edit_outcome_link: Edit proposal outcome
 
   proposal_outcome_form:
     set_outcome: Set proposal outcome

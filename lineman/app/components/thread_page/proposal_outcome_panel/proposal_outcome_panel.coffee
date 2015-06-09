@@ -5,11 +5,8 @@ angular.module('loomioApp').directive 'proposalOutcomePanel', ->
   replace: true
   controller: ($scope, CurrentUser, ProposalFormService) ->
 
-    $scope.showSetOutcome = ->
-      ($scope.proposal.isClosed()) and
-      (!$scope.proposal.hasOutcome()) and
-      (($scope.proposal.author() == CurrentUser) or
-       ($scope.proposal.group().coordinatorsIncludes(CurrentUser)))
+    $scope.canCreateOutcome = ->
+      CurrentUser.canCreateOutcomeFor($scope.proposal)
 
     $scope.currentUser = ->
       CurrentUser
@@ -17,6 +14,8 @@ angular.module('loomioApp').directive 'proposalOutcomePanel', ->
     $scope.openProposalOutcomeForm = ->
       ProposalFormService.openSetOutcomeModal($scope.proposal)
 
+    $scope.canUpdateOutcome = ->
+     CurrentUser.canUpdateOutcomeFor($scope.proposal)
 
     # $scope.openForm = ->
     #   ProposalFormService.openStartProposalModal($scope.discussion)
