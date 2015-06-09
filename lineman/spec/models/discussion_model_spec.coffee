@@ -61,3 +61,14 @@ describe 'DiscussionModel', ->
   describe 'reader', ->
     it "returns the discussion reader associated with this discussion", ->
       expect(discussion.reader()).toBe(discussionReader)
+
+  # describe 'clone()', ->
+  #   it 'copies all of the attributes of the object being cloned', ->
+  #     expect(discussion.clone().title).toBe(discussion.title)
+
+  #   it 'copies all of the methods of the object being closed', ->
+  #     expect(discussion.clone().authorName()).toBe(discussion.authorName())
+
+  #   it 'does not create a new record', ->
+  #     discussion.clone()
+  #     expect(recordStore.discussions.where(id: discussion.id).length).toBe(1)
