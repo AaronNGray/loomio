@@ -18,6 +18,7 @@ angular.module('loomioApp').factory 'BaseModel', ->
       @updateFromJSON(data)
 
     clone: ->
+      @recordsInterface.initialize @serialize()[@constructor.singular]
 
     update: (data) ->
       @updateFromJSON(data)
