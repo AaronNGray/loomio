@@ -78,3 +78,9 @@ describe 'DiscussionModel', ->
     it 'does not create a new record', ->
       discussion.clone()
       expect(recordStore.discussions.where(id: discussion.id).length).toBe(1)
+
+    it 'updates origin record when saved', ->
+      clone = discussion.clone()
+      clone.title = 'New title'
+      clone.save()
+      expect(recordStore.discussions.find(discussion.id).title).toBe('New title')
