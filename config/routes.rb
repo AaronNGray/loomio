@@ -5,6 +5,7 @@ Loomio::Application.routes.draw do
     get 'setup_for_add_comment'
     get 'setup_for_like_comment'
     get 'setup_for_vote_on_proposal'
+    get 'setup_for_proposal_outcome'
     get 'setup_all_notifications'
   end
 

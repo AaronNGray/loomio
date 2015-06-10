@@ -34,8 +34,8 @@ module.exports = new class ProposalsHelper
   closeProposalButton: ->
     element(By.css('.close-proposal-form__submit-btn'))
 
-  proposalClosedAt: ->
-    element(By.css('.cuke-proposal-closed-badge'))
+  # proposalClosedAt: ->
+  #   element(By.css('.cuke-proposal-closed-badge'))
 
   previousProposalsList: ->
     element(By.css('.previous-proposals-card'))
@@ -45,3 +45,21 @@ module.exports = new class ProposalsHelper
 
   currentProposalHeading: ->
     element(By.css('.proposal-expanded__proposal-name'))
+
+  proposalExpandLink: ->
+    element(By.css('a.proposal-collapsed'))
+
+  currentExpandedProposal: ->
+    element(By.css('.proposal-expanded'))
+
+  setProposalOutcomeBtn: ->
+    element(By.css('.proposal-outcome-panel__set-outcome-btn'))
+
+  fillInProposalOutcomeForm: (params) ->
+    element(By.css('.proposal-form__outcome-field')).sendKeys(params.body)
+
+  submitProposalOutcomeForm: ->
+    element(By.css('.proposal-outcome-form__publish-outcome-btn')).click()
+
+  currentExpandedProposalOutcome: ->
+    element(By.css('.proposal-outcome-panel__outcome'))

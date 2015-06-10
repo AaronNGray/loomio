@@ -75,6 +75,18 @@ class AngularSupportController < ApplicationController
     redirect_to discussion_url(testing_discussion)
   end
 
+  def setup_for_proposal_outcome
+    reset_database
+    sign_in patrick
+
+    MotionService.create(motion: Motion.new(name: 'lets go hiking',
+                                            closing_at: 3.days.from_now,
+                                            discussion: testing_discussion),
+                                            actor: patrick)
+    MotionService.close(testing_discussion.motions.last)
+    redirect_to discussion_url(testing_discussion)
+  end
+
   def setup_all_notifications
     reset_database
     sign_in patrick

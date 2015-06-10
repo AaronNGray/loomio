@@ -5,6 +5,12 @@ module.exports = class DiscussionPage
   loadWithActiveProposal: ->
     browser.get('http://localhost:8000/angular_support/setup_for_vote_on_proposal')
 
+  loadWithClosedProposal: ->
+    browser.get('http://localhost:8000/angular_support/setup_for_proposal_outcome')
+
+  # loadWithSetOutcome: ->
+  #   browser.get('http://localhost:8000/angular_support/setup_for_edit_outcome')
+
   addComment: (body) ->
     @enterCommentText(body)
     @submitComment()

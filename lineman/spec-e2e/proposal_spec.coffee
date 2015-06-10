@@ -36,15 +36,27 @@ describe 'Proposals', ->
       proposalsHelper.saveProposalChangesBtn().click()
       expect(proposalsHelper.currentProposalHeading().getText()).toContain('Edited proposal')
 
-  # describe 'closing a proposal', ->
-  #   beforeEach ->
-  #     page.loadWithActiveProposal
+  describe 'closing a proposal', ->
+    beforeEach ->
+      page.loadWithActiveProposal()
 
-  #   it 'successfully closes a proposal', ->
-  #     proposalsHelper.proposalActionsDropdown().click()
-  #     proposalsHelper.proposalActionsDropdownClose().click()
-  #     proposalsHelper.closeProposalButton().click()
-  #     expect(page.previousProposalsList().getText()).toContain("let's go hiking")
-  #     expect(page.proposalClosedAt().isPresent()).toBe(true)
+    it 'successfully closes a proposal', ->
+      proposalsHelper.proposalActionsDropdown().click()
+      proposalsHelper.proposalActionsDropdownClose().click()
+      proposalsHelper.closeProposalButton().click()
+      expect(proposalsHelper.previousProposalsList().getText()).toContain('lets go hiking')
 
-  # set a proposal outcome
+  describe 'setting a proposal outcome', ->
+    beforeEach ->
+
+    it 'successfully creates a proposal outcome', ->
+      page.loadWithClosedProposal()
+      proposalsHelper.proposalExpandLink().click()
+      proposalsHelper.setProposalOutcomeBtn().click()
+      proposalsHelper.fillInProposalOutcomeForm({ body: 'Everyone is happy!' })
+      proposalsHelper.submitProposalOutcomeForm()
+      expect(proposalsHelper.currentExpandedProposalOutcome().getText()).toContain('Everyone is happy!')
+
+    # it 'successfully edits a proposal outcome', ->
+    #   page.loadWithSetOutcome()
+    #   proposalsHelper.proposalExpandLink().click()
