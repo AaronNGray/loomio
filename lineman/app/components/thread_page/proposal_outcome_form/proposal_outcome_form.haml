@@ -3,8 +3,8 @@
     %button{type: 'button', class: 'close', ng-click: 'cancel($event)'}
       %span{aria-hidden: true} &times;
       %span.sr-only{translate: 'common.action.cancel'}
-    %h1.lmo-h1{ng-if: '!proposal.hasOutcome()', translate: 'proposal_outcome_form.set_outcome'}
-    %h1.lmo-h1{ng-if: 'proposal.hasOutcome()', translate: 'proposal_outcome_form.update_outcome'}
+    %h1.lmo-h1{ng-if: '!hasOutcome', translate: 'proposal_outcome_form.set_outcome'}
+    %h1.lmo-h1{ng-if: 'hasOutcome', translate: 'proposal_outcome_form.update_outcome'}
 
   .modal-body
 

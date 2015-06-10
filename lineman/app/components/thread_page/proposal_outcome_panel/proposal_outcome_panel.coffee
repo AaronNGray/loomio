@@ -17,7 +17,4 @@ angular.module('loomioApp').directive 'proposalOutcomePanel', ->
     $scope.canUpdateOutcome = ->
      CurrentUser.canUpdateOutcomeFor($scope.proposal)
 
-    # $scope.openForm = ->
-    #   ProposalFormService.openStartProposalModal($scope.discussion)
-
     return
