@@ -124,7 +124,7 @@ $block-border-color: darken($block-color, 10%);
 #turn-off-angular {
   z-index: 100;
   position: fixed;
-  right: 10px;
+  left: 10px;
   bottom: 10px;
   width: 100px;
   background-color: pink
