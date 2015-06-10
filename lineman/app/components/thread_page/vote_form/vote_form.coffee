@@ -27,16 +27,3 @@ angular.module('loomioApp').directive 'voteForm', ->
     $scope.positionOtherThan = (position) ->
       $scope.vote.position? && $scope.vote.position != position
 
-    sortValueForVote = (vote) ->
-      positionValues = {yes: 1, abstain: 2, no: 3, block: 4}
-      if $scope.voteIsMine(vote)
-        0
-      else
-        positionValues[vote.position]
-
-    $scope.curatedVotes = ->
-      _.sortBy $scope.proposal.uniqueVotes(), (vote) ->
-        sortValueForVote(vote)
-
-    $scope.voteIsMine = (vote) ->
-      vote.authorId == CurrentUser.id

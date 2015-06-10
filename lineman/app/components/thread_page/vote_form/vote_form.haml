@@ -35,18 +35,3 @@
 
         %button.btn.btn-default{ng-click: 'cancel($event)', type: 'button', translate: 'common.action.cancel'}>
 
-  .proposal-expanded-positions
-    %h4.lmo-card-subheading{translate: 'vote_form.positions'}
-
-    %ul.proposal-expanded-votes
-      %li.proposal-expanded-no-votes{ng-show: 'noVotesYet()', translate: 'proposal_expanded.no_votes_yet'}
-      %li.proposal-expanded-vote.media{ng_repeat: 'vote in curatedVotes()'}
-        .media-left
-          .thread-item-vote-icon{class: 'thread-item-vote-icon-{{vote.position}}'}
-        .media-body
-          %span.proposal-expanded-vote{translate: "new_vote_item.{{vote.positionVerb()}}", translate-value-name: '{{vote.authorName()}}'}
-          %span{ng-if: '!vote.hasStatement()'}.
-          %span{ng-if: 'vote.hasStatement()'}: {{::vote.statement}}
-          %a.change-your-vote{href: '', ng-click: 'changeVote()', ng-show: 'proposal.isActive() && voteIsMine(vote)'}
-            %i.fa.fa-exchange{aria-hidden: 'true'}>
-            %span{translate: 'vote_form.change_your_vote'}

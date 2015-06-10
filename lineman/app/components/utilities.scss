@@ -144,9 +144,11 @@ label.label-with-details{
   margin-top: 0;
   margin-bottom: 10px;
 }
+
 .lmo-card-subheading{
   @include fontSmall;
   @include fontHelveticaMedium;
+  text-transform: uppercase;
   color: $grey-on-white;
   margin-top: 1.5em;
 }

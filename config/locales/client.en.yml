@@ -131,9 +131,7 @@ en:
 
   vote_form:
     no_statement: No statement.
-    change_your_vote: Change your vote.
     have_your_say: Have your say
-    positions: Positions
     submitted_your_vote: Submitted your vote.
     i_agree: 'I agree'
     i_agree_details: 'I support this and want it to go ahead.'
@@ -148,6 +146,14 @@ en:
     select_position: 'Select position'
     statement_placeholder: 'Share your thoughts with the group.'
     aria_statement_label: 'Optionally enter a statement to be recorded with your position'
+
+  proposal_positions_panel:
+    heading: Positions
+    no_votes_yet: Nobody has voted on this proposal yet.
+    change_your_vote: Change your vote.
+
+  proposal_pie_chart:
+    participation_statement: '{{percentage}}% of members have stated their position ({{number}}/{{total}})'
 
   close_proposal_form:
     close_proposal: 'Close proposal'
@@ -204,7 +210,6 @@ en:
     collapse: Collapse
     current_votes: Current votes
     started_by: 'Started by <strong>{{name}}</strong>'
-    no_votes_yet: 'Nobody has voted on this proposal yet.'
     only_voter_is_you: 'No other members have voted yet.'
     extend_proposal: 'Change closing time'
     edit_proposal: 'Edit proposal'
