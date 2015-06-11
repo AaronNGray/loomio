@@ -63,3 +63,9 @@ module.exports = new class ProposalsHelper
 
   currentExpandedProposalOutcome: ->
     element(By.css('.proposal-outcome-panel__outcome'))
+
+  editOutcomeLink: ->
+    element(By.css('.proposal-outcome-panel__edit-outcome-link'))
+
+  editProposalOutcomeForm: (params) ->
+    element(By.css('.proposal-form__outcome-field')).clear().sendKeys(params.body)

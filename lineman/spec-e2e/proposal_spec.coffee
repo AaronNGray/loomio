@@ -15,6 +15,7 @@ describe 'Proposals', ->
       # expect(threadHelper.flashMessageText()).toContain('Successfully created your proposal')
 
   describe 'voting on a proposal', ->
+
     beforeEach ->
       threadHelper.loadWithActiveProposal()
 
@@ -25,6 +26,7 @@ describe 'Proposals', ->
       expect(proposalsHelper.positionsList().getText()).toContain('This is a good idea')
 
   describe 'editing a proposal', ->
+
     beforeEach ->
       threadHelper.loadWithActiveProposal()
 
@@ -36,6 +38,7 @@ describe 'Proposals', ->
       expect(proposalsHelper.currentProposalHeading().getText()).toContain('Edited proposal')
 
   describe 'closing a proposal', ->
+
     beforeEach ->
       threadHelper.loadWithActiveProposal()
 
@@ -46,7 +49,6 @@ describe 'Proposals', ->
       expect(proposalsHelper.previousProposalsList().getText()).toContain('lets go hiking')
 
   describe 'setting a proposal outcome', ->
-    beforeEach ->
 
     it 'successfully creates a proposal outcome', ->
       threadHelper.loadWithClosedProposal()
@@ -59,4 +61,7 @@ describe 'Proposals', ->
     it 'successfully edits a proposal outcome', ->
       threadHelper.loadWithSetOutcome()
       proposalsHelper.proposalExpandLink().click()
-
+      proposalsHelper.editOutcomeLink().click()
+      proposalsHelper.editProposalOutcomeForm({ body: 'Gonna make things happen!' })
+      proposalsHelper.submitProposalOutcomeForm()
+      expect(proposalsHelper.currentExpandedProposalOutcome().getText()).toContain('Gonna make things happen!')
