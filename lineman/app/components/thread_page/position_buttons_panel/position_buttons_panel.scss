@@ -1,15 +1,12 @@
-.vote-form form{
-  margin-top: 10px;
-}
-.vote-form-label{
-  font-weight: bold;
-}
-.vote-form-details{
-  font-weight: normal;
-}
-.position-buttons {
+.position-buttons-panel {
   margin-bottom: 5px;
 }
+
+.position-buttons-panel input {
+  opacity: 0;
+  margin-left: -13px;
+}
+
 .position-button {
   margin-right: 15px;
   display: inline-block;
@@ -21,15 +18,13 @@
   border-width: 1px;
   border-style: solid;
 }
-.vote-form input[type="radio"]:checked+label{
-  @include box-shadow(2px 2px 3px rgba(0,0,0,0.5))
-}
+
+/*.vote-form input[type="radio"]:checked+label{*/
+  /*@include box-shadow(2px 2px 3px rgba(0,0,0,0.5))*/
+/*}*/
+
 .position-button--dimmed{
   opacity: 0.3;
-}
-.position-buttons input {
-  opacity: 0;
-  margin-left: -13px;
 }
 .position-button--yes{
   background-image: url(/img/green_thumb_button_inv_60.png);
@@ -52,24 +47,4 @@
   margin-left: 4px;
   background-image: url(/img/red_flag_button_inv_60.png);
   border-color: darken($block-color, 15%);
-}
-
-.your-position-icon-yes {
-  background-image: url(/img/green_thumb_30.png);
-}
-
-.your-position-icon-no {
-  background-image: url(/img/pink_thumb_30.png);
-}
-
-.your-position-icon-abstain {
-  background-image: url(/img/yellow_thumb_30.png);
-}
-
-.your-position-icon-block {
-  background-image: url(/img/red_flag_30.png);
-}
-
-.overlimit {
-  color: red;
 }

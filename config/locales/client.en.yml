@@ -148,7 +148,10 @@ en:
     motion_outcome_created: "<strong>{{name}}</strong> published an outcome for the proposal <strong>{{proposal}}</strong>"
     motion_outcome_updated: "<strong>{{name}}</strong> updated the outcome for the proposal <strong>{{proposal}}</strong>"
 
-  vote_form_modal:
+  position_buttons_panel:
+    heading: Have your say
+
+  vote_form:
     heading: Have your say
     no_statement: No statement.
     submitted_your_vote: Submitted your vote.
