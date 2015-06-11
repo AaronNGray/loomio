@@ -75,7 +75,7 @@ describe 'DiscussionModel', ->
     it 'copies all of the methods of the object being closed', ->
       expect(discussion.clone().authorName()).toBe(discussion.authorName())
 
-    it 'does not create a new record', ->
+    it 'does not insert clone into record store', ->
       discussion.clone()
       expect(recordStore.discussions.where(id: discussion.id).length).toBe(1)
 
