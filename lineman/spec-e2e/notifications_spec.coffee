@@ -1,5 +1,5 @@
 describe 'Notifications', ->
-  xit 'has all the notifications', ->
+  iit 'has all the notifications', ->
     browser.get('http://localhost:8000/angular_support/setup_all_notifications')
 
     unreadCount = ->

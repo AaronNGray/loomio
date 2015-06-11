@@ -1,23 +1,22 @@
 describe 'Proposals', ->
 
-  DiscussionPage = require './helpers/discussion_page.coffee'
+  threadHelper = require './helpers/thread_helper.coffee'
   proposalsHelper = require './helpers/proposals_helper.coffee'
-  page = new DiscussionPage
 
   describe 'starting a proposal', ->
 
     beforeEach ->
-      page.load()
+      threadHelper.load()
 
     it 'successfully starts a new proposal', ->
       proposalsHelper.startProposalBtn().click()
       proposalsHelper.fillInProposalForm({ title: 'New proposal', details: 'Describing the proposal' })
       proposalsHelper.submitProposalForm()
-      # expect(page.flashMessageText()).toContain('Successfully created your proposal')
+      # expect(threadHelper.flashMessageText()).toContain('Successfully created your proposal')
 
   describe 'voting on a proposal', ->
     beforeEach ->
-      page.loadWithActiveProposal()
+      threadHelper.loadWithActiveProposal()
 
     it 'successfully votes on a proposal', ->
       proposalsHelper.agreeBtn().click()
@@ -27,7 +26,7 @@ describe 'Proposals', ->
 
   describe 'editing a proposal', ->
     beforeEach ->
-      page.loadWithActiveProposal()
+      threadHelper.loadWithActiveProposal()
 
     it 'successfully edits a proposal when there are no votes', ->
       proposalsHelper.proposalActionsDropdown().click()
@@ -38,7 +37,7 @@ describe 'Proposals', ->
 
   describe 'closing a proposal', ->
     beforeEach ->
-      page.loadWithActiveProposal()
+      threadHelper.loadWithActiveProposal()
 
     it 'successfully closes a proposal', ->
       proposalsHelper.proposalActionsDropdown().click()
@@ -50,13 +49,14 @@ describe 'Proposals', ->
     beforeEach ->
 
     it 'successfully creates a proposal outcome', ->
-      page.loadWithClosedProposal()
+      threadHelper.loadWithClosedProposal()
       proposalsHelper.proposalExpandLink().click()
       proposalsHelper.setProposalOutcomeBtn().click()
       proposalsHelper.fillInProposalOutcomeForm({ body: 'Everyone is happy!' })
       proposalsHelper.submitProposalOutcomeForm()
       expect(proposalsHelper.currentExpandedProposalOutcome().getText()).toContain('Everyone is happy!')
 
-    # it 'successfully edits a proposal outcome', ->
-    #   page.loadWithSetOutcome()
-    #   proposalsHelper.proposalExpandLink().click()
+    it 'successfully edits a proposal outcome', ->
+      threadHelper.loadWithSetOutcome()
+      proposalsHelper.proposalExpandLink().click()
+
